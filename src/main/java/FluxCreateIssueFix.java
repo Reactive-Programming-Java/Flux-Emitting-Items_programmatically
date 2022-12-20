@@ -15,10 +15,9 @@ public class FluxCreateIssueFix {
                 fluxSink.next(country);
             }while (!country.equals("Canada") && !fluxSink.isCancelled());
             fluxSink.complete();
-            System.out.println(fluxSink.isCancelled());
+            System.out.println(fluxSink.isCancelled() ? "Cancelled" : "Running");
         })
-        .log()
-        .take(3) // Here we want to receive only 3 events
+        .take(3) // Here we are limiting events production to 3 data and after get canceled
         .subscribe(Util.subscriber());
 
     }
