@@ -1,7 +1,6 @@
-package assignment.data;
+package assignment.resolution;
 
 import Util.Util;
-import assignment.FileReader;
 import reactor.core.publisher.Flux;
 
 import java.io.File;

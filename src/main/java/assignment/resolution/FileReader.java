@@ -1,4 +1,4 @@
-package assignment;
+package assignment.resolution;
 
 import Util.Util;
 
