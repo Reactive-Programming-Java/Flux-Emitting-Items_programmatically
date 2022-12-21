@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 public class Util {
 
   private static final Faker FAKER = Faker.instance();
-  public static final Path FILEPATH = Path.of("C:\\projects\\Trainings\\reativeprogramming\\Flux-Emitting-Items_programmatically\\src\\main\\java\\assignment\\data");
+  public static final Path FILEPATH = Path.of("C:\\projects\\Trainings\\reativeprogramming\\Flux-Emitting-Items_programmatically\\src\\main\\java\\assignment\\data\\data.txt");
   // public static final Path FILEPATH = Path.of("/Users/Elimane/JAVA_REACTIVE_PROGRAMMING/Mono_Project/src/main/resources/assignment/data");
 
   public static Consumer<Object> onNext(){

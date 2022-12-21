@@ -2,17 +2,25 @@ package assignment;
 
 import Util.Util;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * @author efofana
  */
 public class FileReader {
-    public static String readFile(String  fileName){
-        System.out.println("Reading file "+fileName+"...");
+    public static String readFile(){
+       // System.out.println("Reading file "+fileName+"...");
         try {
-            return Files.readString(Util.FILEPATH.resolve(fileName+".txt").normalize());
+            Path path = Util.FILEPATH;
+            File file = Util.FILEPATH.toFile();
+
+            if(!file.exists())
+            Files.createFile(path);
+
+            return Files.readString(file.toPath());
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
         }
