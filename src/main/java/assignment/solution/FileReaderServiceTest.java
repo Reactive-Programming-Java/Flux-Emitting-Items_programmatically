@@ -32,6 +32,12 @@ public class FileReaderServiceTest {
 
         Path path = Util.FILEPATH;
         FileReaderService.read(path)
+          .map(s -> {
+            Integer integer = Util.faker().random().nextInt(0,8);
+            if(integer > 4)
+              throw new RuntimeException("oops");
+            return s;
+          })
           .take(times) // To read only 4 lines
           .subscribe(Util.subscriber());
 
